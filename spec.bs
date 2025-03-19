@@ -57,24 +57,36 @@ What is FORCE
 ODRL Compliance Report Model {#compliance-report}
 =====================
 
-TODO: image
+<figure id="compliance-report-model-figure">
+<img src="./img/Compliance Report Model.svg">
+<figcaption>Compliance Report model</figcaption>
+</figure>
+TODO: refer to custom spec
+
+ODRL Test Suite {#test-suite}
+=====================
+
+<figure id="test-suite-figure">
+<img src="./img/test-suite-cropped.jpg"> 
+<figcaption>ODRL Test Suite</figcaption>
+</figure>
+TODO: write full text
+
+- TODO: what makes a test pass or fail in plain terms.
 
 ODRL Evaluator {#evaluator}
 =====================
 
-TODO: image
+<figure id="odrl-evaluator-figure">
+<img src="./img/ODRL-Evaluator.svg">
+<figcaption>ODRL Evaluator architecture</figcaption>
+</figure>
+TODO: write full text
 
 Mention different steps
 
 Elaborate the need for the time thingy
 Refer to repo how much we support
-
-ODRL Test Suite {#test-suite}
-=====================
-
-TODO: image
-
-- TODO: what makes a test pass or fail in plain terms.
 
 Supporting Materials {#supporting-materials}
 =====================

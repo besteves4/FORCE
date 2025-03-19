@@ -1,0 +1,101 @@
+<pre class='metadata'>
+Title: Framework for ODRL Rule Compliance through Evaluation
+Shortname: FORCE
+Level: none
+Status: LD
+Editor: Wout Slabbinck, Ghent University - imec http://idlab.ugent.be/, wout.slabbinck@ugent.be
+Editor: Beatriz Esteves, Ghent University - imec http://idlab.ugent.be/, beatriz.esteves@ugent.be
+Abstract: The Framework for ODRL Rule Compliance through Evaluation (FORCE) is designed to assist in ODRL policy development and enhance comprehension of ODRL evaluation outputs.
+Markup Shorthands: markdown yes, css no
+Canonical URL: _ORCHESTRATOR_CURRENT_BUILD_FULL_LINK_
+Previous Version: _ORCHESTRATOR_PREVIOUS_BUILD_FULL_LINK_
+</pre>
+
+<pre class=biblio> 
+{"odrl-formal-semantics": {
+    "href": "https://w3c.github.io/odrl/formal-semantics/",
+    "title": "ODRL Formal Semantics",
+    "authors": [
+        "Nicoletta Fornara",
+        "Víctor Rodríguez-Doncel",
+        "Beatriz Esteves",
+        "Simon Steyskal",
+        "Benedict Whittam Smith"
+		]
+    }
+}
+</pre>
+
+Introd­uction {#introduction}
+=====================
+TODO: write full text
+Mention ODRL
+[[!ODRL-model]] [[!odrl-vocab]]
+
+The curent problem
+
+Formal Semantics spec [[!odrl-formal-semantics]]
+
+What is FORCE
+- compliance report model
+- ODRL evaluator
+- test suite
+
+
+
+## Terminology ## {#terminology}
+
+<dl>
+  <dt><dfn>ODRL Compliance Report</dfn></dt>
+  <dd>A vocabulary that is used to elaborate the result of an evaluation of an ODRL Policy, (optionally) ODRL Request and the State of the World. It elaborates not only whether a rule from a policy is active, but also why.</dd>
+
+  <dt><dfn>ODRL Evaluator</dfn></dt>
+  <dd>A system that determines whether the Rules of an ODRL Policy expression have meet their intended action performance.</dd>
+</dl>
+
+
+ODRL Compliance Report Model {#compliance-report}
+=====================
+
+TODO: image
+
+ODRL Evaluator {#evaluator}
+=====================
+
+TODO: image
+
+Mention different steps
+
+Elaborate the need for the time thingy
+Refer to repo how much we support
+
+ODRL Test Suite {#test-suite}
+=====================
+
+TODO: image
+
+- TODO: what makes a test pass or fail in plain terms.
+
+Supporting Materials {#supporting-materials}
+=====================
+
+- [=ODRL Compliance Report=]: https://w3id.org/force/compliance-report
+    - repo: https://w3id.org/force/compliance-report/repo
+- test suite: https://w3id.org/force/test-suite
+    - repo: https://w3id.org/force/test-suite/repo
+- github repository for an [=ODRL Evaluator=]: [https://w3id.org/force/evaluator](https://w3id.org/force/evaluator)
+- eswc paper: TODO:
+- demonstrator: https://w3id.org/force/ESWC2025-demo
+    - source code: https://w3id.org/force/ESWC2025-demo/repo
+
+Namespaces {#namespaces}
+=====================
+
+Commonly used namespace prefixes used in this specification:
+```turtle
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix odrl:   <http://www.w3.org/ns/odrl/2/>.
+@prefix report: <https://w3id.org/force/compliance-report#>
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+```

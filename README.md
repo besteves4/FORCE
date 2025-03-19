@@ -2,6 +2,7 @@
 
 This is the [Bikeshed](https://github.com/speced/bikeshed/) specification repository for Framework for ODRL Rule Compliance through Evaluation.
 
+All versions can be seen at: https://spec.knows.idlab.ugent.be/
 
 ## Contributing
 

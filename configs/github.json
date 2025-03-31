@@ -2,6 +2,7 @@
   "repo": "https://github.com/SolidLabResearch/FORCE",
   "name": "Framework for ODRL Rule Compliance through Evaluation",
   "id": "force",
+  "root": "force",
   "publications": [
     {
       "name": "All commits",

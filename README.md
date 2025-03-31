@@ -45,3 +45,9 @@ Every time you save `spec.bs` a new build is automatically triggered.
 
 Bikeshed uses a default copyright and license.
 Please make sure that it fits your requirements.
+
+## Feedback and questions
+
+Do not hesitate to [report a bug](https://github.com/SolidLabResearch/FORCE/issues).
+
+Further questions can also be asked to [Wout Slabbinck](mailto:wout.slabbinck@ugent.be) (maintainer of this repository).

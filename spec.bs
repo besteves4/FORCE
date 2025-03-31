@@ -28,7 +28,7 @@ Previous Version: _ORCHESTRATOR_PREVIOUS_BUILD_FULL_LINK_
 
 Introd­uction {#introduction}
 =====================
-TODO: write full text
+<mark>TODO:</mark> write full text
 Mention ODRL
 [[!ODRL-model]] [[!odrl-vocab]]
 
@@ -61,7 +61,7 @@ ODRL Compliance Report Model {#compliance-report}
 <img src="./img/Compliance Report Model.svg">
 <figcaption>Compliance Report model</figcaption>
 </figure>
-TODO: refer to custom spec
+<mark>TODO:</mark> refer to custom spec
 
 ODRL Test Suite {#test-suite}
 =====================
@@ -70,9 +70,9 @@ ODRL Test Suite {#test-suite}
 <img src="./img/test-suite-cropped.jpg"> 
 <figcaption>ODRL Test Suite</figcaption>
 </figure>
-TODO: write full text
+<mark>TODO:</mark> write full text
 
-- TODO: what makes a test pass or fail in plain terms.
+- <mark>TODO:</mark> what makes a test pass or fail in plain terms.
 
 ODRL Evaluator {#evaluator}
 =====================
@@ -81,7 +81,7 @@ ODRL Evaluator {#evaluator}
 <img src="./img/ODRL-Evaluator.svg">
 <figcaption>ODRL Evaluator architecture</figcaption>
 </figure>
-TODO: write full text
+<mark>TODO:</mark> write full text
 
 Mention different steps
 
@@ -96,7 +96,7 @@ Supporting Materials {#supporting-materials}
 - test suite: https://w3id.org/force/test-suite
     - repo: https://w3id.org/force/test-suite/repo
 - github repository for an [=ODRL Evaluator=]: [https://w3id.org/force/evaluator](https://w3id.org/force/evaluator)
-- eswc paper: TODO:
+- eswc paper: <mark>TODO:</mark>
 - demonstrator: https://w3id.org/force/ESWC2025-demo
     - source code: https://w3id.org/force/ESWC2025-demo/repo
 

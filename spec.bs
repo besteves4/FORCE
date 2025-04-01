@@ -91,14 +91,14 @@ Refer to repo how much we support
 Supporting Materials {#supporting-materials}
 =====================
 
-- [=ODRL Compliance Report=]: https://w3id.org/force/compliance-report
-    - repo: https://w3id.org/force/compliance-report/repo
-- test suite: https://w3id.org/force/test-suite
-    - repo: https://w3id.org/force/test-suite/repo
+- [=ODRL Compliance Report=]: [https://w3id.org/force/compliance-report](https://w3id.org/force/compliance-report)
+    - repo: [https://w3id.org/force/compliance-report/repo](https://w3id.org/force/compliance-report/repo)
+- test suite: [https://w3id.org/force/test-suite](https://w3id.org/force/test-suite)
+    - repo: [https://w3id.org/force/test-suite/repo](https://w3id.org/force/test-suite/repo)
 - github repository for an [=ODRL Evaluator=]: [https://w3id.org/force/evaluator](https://w3id.org/force/evaluator)
 - eswc paper: <mark>TODO:</mark>
-- demonstrator: https://w3id.org/force/ESWC2025-demo
-    - source code: https://w3id.org/force/ESWC2025-demo/repo
+- demonstrator: [https://w3id.org/force/ESWC2025-demo](https://w3id.org/force/ESWC2025-demo)
+    - source code: [https://w3id.org/force/ESWC2025-demo/repo](https://w3id.org/force/ESWC2025-demo/repo)
 
 Namespaces {#namespaces}
 =====================

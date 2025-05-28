@@ -5,23 +5,53 @@ Level: none
 Status: LD
 Editor: Wout Slabbinck, Ghent University - imec http://idlab.ugent.be/, wout.slabbinck@ugent.be
 Editor: Beatriz Esteves, Ghent University - imec http://idlab.ugent.be/, beatriz.esteves@ugent.be
-Abstract: The Framework for ODRL Rule Compliance through Evaluation (FORCE) is designed to assist in ODRL policy development and enhance comprehension of ODRL evaluation outputs.
+Abstract: The Framework for ODRL Rule Compliance through Evaluation (FORCE) is designed to assist in ODRL policy development and enhance comprehension of ODRL evaluation outputs. Furthermore, it enables experimentation and prototyping of ODRL 3.0 proposals.
 Markup Shorthands: markdown yes, css no
+URL: https://w3id.org/force/
 Canonical URL: _ORCHESTRATOR_CURRENT_BUILD_FULL_LINK_
 Previous Version: _ORCHESTRATOR_PREVIOUS_BUILD_FULL_LINK_
+Repository: https://github.com/SolidLabResearch/FORCE/
+!License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a>
 </pre>
 
 <pre class=biblio> 
-{"odrl-formal-semantics": {
-    "href": "https://w3c.github.io/odrl/formal-semantics/",
-    "title": "ODRL Formal Semantics",
-    "authors": [
-        "Nicoletta Fornara",
-        "Víctor Rodríguez-Doncel",
-        "Beatriz Esteves",
-        "Simon Steyskal",
-        "Benedict Whittam Smith"
-		]
+{
+    "odrl-formal-semantics": {
+        "href": "https://w3c.github.io/odrl/formal-semantics/",
+        "title": "ODRL Formal Semantics",
+        "authors": [
+            "Nicoletta Fornara",
+            "Víctor Rodríguez-Doncel",
+            "Beatriz Esteves",
+            "Simon Steyskal",
+            "Benedict Whittam Smith"
+        ]
+    },
+    "SotW4ODRL": {
+        "href": "https://w3id.org/force/sotw",
+        "title": "State of the World for ODRL Evaluator",
+        "authors": [
+            "Beatriz Esteves",
+            "Wout Slabbinck"
+        ]
+    },
+    "ODRL3.0Proposal": {
+        "href": "https://w3id.org/force/odrl3proposal",
+        "title": "Open Digital Rights Language (ODRL) 3.0 Proposal",
+        "authors": [
+            "Beatriz Esteves",
+            "Wout Slabbinck",
+            "Wouter Termont",
+            "Joachim Van Herwegen" 
+        ]
+    },
+    "ODRL-Instantiation": {
+        "href": "https://w3id.org/force/policy-instantiation",
+        "title": "ODRL Policy Agreement Instantiation",
+        "authors": [
+            "Ruben Dedecker",
+            "Beatriz Esteves"
+        ]
     }
 }
 </pre>
@@ -29,21 +59,27 @@ Previous Version: _ORCHESTRATOR_PREVIOUS_BUILD_FULL_LINK_
 Introd­uction {#introduction}
 =====================
 <mark>TODO:</mark> write full text
-Mention ODRL
-[[!ODRL-model]] [[!odrl-vocab]]
+The Open Digital Rights Language (ODRL) is a W3C Recommendation 
+- [[!ODRL-model]]: interoperable information model
+- [[!odrl-vocab]]: The vocabulary used in that model
 
-The curent problem
+The current problem: the recommendation defines how to represent policies using the vocabulary using the model, the interpretation and evaluation of these policies and its accompanying rules are not standardized.
 
-Formal Semantics spec [[!odrl-formal-semantics]]
+To this extend: Formal Semantics spec [[!odrl-formal-semantics]]
 
-What is FORCE
-- compliance report model
-- ODRL evaluator
-- test suite
+Inspired by the ODRL Formal Semantics CG, Slabbinck et al. made in [Interoperable Interpretation and Evaluation of ODRL Policies](https://raw.githubusercontent.com/woutslabbinck/papers/main/2025/Interoperable-Interpretation-and-Evaluation-of-ODRL-Policies.pdf):
 
+* [=ODRL Compliance Report=]
+* [ODRL Test Suite](https://w3id.org/force/test-suite): 
+* [=ODRL Evaluator=]
 
+FORCE is build on top of an [=ODRL Evaluator=] to allow experimenting with ODRL policies and the evaluation process.
+This is made possible through a user friendly User Interface
+Furthermore, it is used as an experimentation platform to prototype and showcase future ODRL proposals that could be included for ODRL 3.0.
 
 ## Terminology ## {#terminology}
+
+The following terms are used to describe concepts in this specification. 
 
 <dl>
   <dt><dfn>ODRL Compliance Report</dfn></dt>
@@ -51,7 +87,11 @@ What is FORCE
 
   <dt><dfn>ODRL Evaluator</dfn></dt>
   <dd>A system that determines whether the Rules of an ODRL Policy expression have meet their intended action performance.</dd>
+
+  <dt><dfn>State of the World</dfn></dt>
+  <dd>A set of knowledge representing real-world information aiding the evaluation of ODRL Policies. See the [State of the World for ODRL Evaluator](https://w3id.org/force/sotw) specification for further details. </dd>
 </dl>
+<mark>TODO:</mark> add state of the world and refer to state of the world specification
 
 
 ODRL Compliance Report Model {#compliance-report}
@@ -88,6 +128,16 @@ Mention different steps
 Elaborate the need for the time thingy
 Refer to repo how much we support
 
+User Inteface {#UI}
+=====================
+[https://w3id.org/force/ESWC2025-demo](https://w3id.org/force/ESWC2025-demo)
+<mark>TODO: rename to NXDG2025 demo</mark>
+
+ODRL 3.0 {#odrl3.0}
+=====================
+
+[[!ODRL3.0PROPOSAL]]
+
 Supporting Materials {#supporting-materials}
 =====================
 
@@ -96,7 +146,10 @@ Supporting Materials {#supporting-materials}
 - test suite: [https://w3id.org/force/test-suite](https://w3id.org/force/test-suite)
     - repo: [https://w3id.org/force/test-suite/repo](https://w3id.org/force/test-suite/repo)
 - github repository for an [=ODRL Evaluator=]: [https://w3id.org/force/evaluator](https://w3id.org/force/evaluator)
-- eswc paper: <mark>TODO:</mark>
+- ESWC 2025 paper: <mark>TODO:</mark>
+- [=State of the World=] for ODRL specification ([[!SotW4ODRL]]): [https://w3id.org/sotw](https://w3id.org/sotw)
+- ODRL Policy Instantiation specification ([[!ODRL-Instantiation]]): [https://w3id.org/policy-instantiation](https://w3id.org/policy-instantiation)
+- ODRL 3.0 Proposal specification: [https://w3id.org/odrl3proposal](https://w3id.org/odrl3proposal)
 - demonstrator: [https://w3id.org/force/ESWC2025-demo](https://w3id.org/force/ESWC2025-demo)
     - source code: [https://w3id.org/force/ESWC2025-demo/repo](https://w3id.org/force/ESWC2025-demo/repo)
 
@@ -105,9 +158,11 @@ Namespaces {#namespaces}
 
 Commonly used namespace prefixes used in this specification:
 ```turtle
-@prefix dct:    <http://purl.org/dc/terms/> .
-@prefix odrl:   <http://www.w3.org/ns/odrl/2/>.
-@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix report: <https://w3id.org/force/compliance-report#>
-@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix odrl3proposal: <https://w3id.org/force/odrl3proposal#> .
+@prefix report:        <https://w3id.org/force/compliance-report#> .
+@prefix rdf:           <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:          <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:           <http://www.w3.org/2001/XMLSchema#> .
 ```

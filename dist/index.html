@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version b25686b9f, updated Fri Mar 14 14:15:20 2025 -0700" name="generator">
   <link href="_ORCHESTRATOR_CURRENT_BUILD_FULL_LINK_" rel="canonical">
-  <meta content="b1ebfc9536948fca33371b8fb21c8c8009c35112" name="revision">
+  <meta content="b88fb95561e7a9c1c73767b7bb94c2a99e8de1b1" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2243,7 +2243,25 @@ and <code>odrl:spatial</code> and <code>odrl:purpose</code> as ODRL left operand
 There is also the possibility to extend this vocabulary through the usage of profiles <a data-link-type="biblio" href="#biblio-odrl-profile-bp" title="ODRL V2.2 Profile Best Practices">[odrl-profile-bp]</a>,
 which allow the definition of additional terms, e.g., custom actions or left operands,
 for particular domains, e.g., healthcare or education.</p>
-   <p>As previously discussed, the ODRL recommendations define how to represent policies using the information model and the vocabulary,
+   <p>As an example, the following ODRL policy specifies a patient’s permission for its health data to be read by a physician for primary care:</p>
+<pre class="language-turtle highlight"><c- k>@prefix</c-> <c- nn>dcterms:</c->       <c- g>&lt;http://purl.org/dc/terms/></c-> <c- p>.</c->
+<c- k>@prefix</c-> <c- nn>odrl:</c->          <c- g>&lt;http://www.w3.org/ns/odrl/2/></c-> <c- p>.</c->
+<c- k>@prefix</c-> <c- nn>sector-health:</c-> <c- g>&lt;https://w3id.org/dpv/sector/health#></c-> <c- p>.</c->
+
+<c- g>&lt;https://example.com/health-primarycare></c-> <c- b>a</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>Set</c-> <c- p>;</c->
+    <c- nn>odrl</c-><c- p>:</c-><c- f>uid</c-> <c- g>&lt;https://example.com/health-primarycare></c-> <c- p>;</c->
+    <c- nn>dcterms</c-><c- p>:</c-><c- f>description</c-> <c- s>"Patient allows its health data to be read by a physician for primary care."</c-><c- o>@</c->en <c- p>;</c->
+    <c- nn>odrl</c-><c- p>:</c-><c- f>permission</c-> <c- p>[</c->
+        <c- nn>odrl</c-><c- p>:</c-><c- f>action</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>read</c-> <c- p>;</c->
+        <c- nn>odrl</c-><c- p>:</c-><c- f>target</c-> <c- g>&lt;https://example.com/patient/health-data></c-> <c- p>;</c->
+        <c- nn>odrl</c-><c- p>:</c-><c- f>assigner</c-> <c- g>&lt;https://example.com/patient></c-> <c- p>;</c->
+        <c- nn>odrl</c-><c- p>:</c-><c- f>assignee</c-> <c- g>&lt;https://example.com/physician></c-> <c- p>;</c->
+        <c- nn>odrl</c-><c- p>:</c-><c- f>constraint</c-> <c- p>[</c->
+            <c- nn>odrl</c-><c- p>:</c-><c- f>leftOperand</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>purpose</c-> <c- p>;</c->
+            <c- nn>odrl</c-><c- p>:</c-><c- f>operator</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>eq</c-> <c- p>;</c->
+            <c- nn>odrl</c-><c- p>:</c-><c- f>rightOperand</c-> <c- nn>sector-health</c-><c- p>:</c-><c- f>PrimaryCareManagement</c-> <c- p>]</c-> <c- p>]</c-> <c- p>.</c->
+</pre>
+   <p>Furthermore, as previously discussed, the ODRL recommendations define how to represent policies using the information model and the vocabulary,
 however the expected behavior of software that performs computations based on these policies is not standardized.
 Hence, this might lead to differences in the interpretation and evaluation of these policies and its accompanying rules.
 To tackle this issue, the <a href="https://www.w3.org/community/odrl/">ODRL CG</a> is currently developing a formal semantics for ODRL 2.2 <a data-link-type="biblio" href="#biblio-odrl-formal-semantics" title="ODRL Formal Semantics">[odrl-formal-semantics]</a>.

@@ -89,7 +89,27 @@ There is also the possibility to extend this vocabulary through the usage of pro
 which allow the definition of additional terms, e.g., custom actions or left operands,
 for particular domains, e.g., healthcare or education.
 
-As previously discussed, the ODRL recommendations define how to represent policies using the information model and the vocabulary,
+As an example, the following ODRL policy specifies a patient's permission for its health data to be read by a physician for primary care:
+```turtle
+@prefix dcterms:       <http://purl.org/dc/terms/> .
+@prefix odrl:          <http://www.w3.org/ns/odrl/2/> .
+@prefix sector-health: <https://w3id.org/dpv/sector/health#> .
+
+<https://example.com/health-primarycare> a odrl:Set ;
+    odrl:uid <https://example.com/health-primarycare> ;
+    dcterms:description "Patient allows its health data to be read by a physician for primary care."@en ;
+    odrl:permission [
+        odrl:action odrl:read ;
+        odrl:target <https://example.com/patient/health-data> ;
+        odrl:assigner <https://example.com/patient> ;
+        odrl:assignee <https://example.com/physician> ;
+        odrl:constraint [
+            odrl:leftOperand odrl:purpose ;
+            odrl:operator odrl:eq ;
+            odrl:rightOperand sector-health:PrimaryCareManagement ] ] .
+```
+
+Furthermore, as previously discussed, the ODRL recommendations define how to represent policies using the information model and the vocabulary,
 however the expected behavior of software that performs computations based on these policies is not standardized.
 Hence, this might lead to differences in the interpretation and evaluation of these policies and its accompanying rules.
 To tackle this issue, the [ODRL CG](https://www.w3.org/community/odrl/)

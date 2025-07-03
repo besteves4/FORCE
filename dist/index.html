@@ -1490,7 +1490,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version b25686b9f, updated Fri Mar 14 14:15:20 2025 -0700" name="generator">
   <link href="_ORCHESTRATOR_CURRENT_BUILD_FULL_LINK_" rel="canonical">
-  <meta content="c22d6b3acbb11322646fbd27fd3a46f4f1f18872" name="revision">
+  <meta content="9b2cc625e0b4445cb9e332c3b8f5de272afc6b8e" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2227,6 +2227,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    </ol>
   </nav>
   <main>
+   <p><strong>TODO: mention all publications that contributed to this work so far.</strong></p>
    <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introd­uction</span><a class="self-link" href="#introduction"></a></h2>
    <p>The <strong>Open Digital Rights Language (ODRL)</strong> is a W3C Recommendation that provides a standardized, machine-readable way to
 express permissions, prohibitions, and obligations over content and services.
@@ -2244,12 +2245,8 @@ and <code>odrl:spatial</code> and <code>odrl:purpose</code> as ODRL left operand
 There is also the possibility to extend this vocabulary through the usage of profiles <a data-link-type="biblio" href="#biblio-odrl-profile-bp" title="ODRL V2.2 Profile Best Practices">[odrl-profile-bp]</a>,
 which allow the definition of additional terms, e.g., custom actions or left operands,
 for particular domains, e.g., healthcare or education.</p>
-   <p>As an example, the following ODRL policy specifies a patient’s permission for its health data to be read by a physician for primary care:</p>
-<pre class="language-turtle highlight"><c- k>@prefix</c-> <c- nn>dcterms:</c->       <c- g>&lt;http://purl.org/dc/terms/></c-> <c- p>.</c->
-<c- k>@prefix</c-> <c- nn>odrl:</c->          <c- g>&lt;http://www.w3.org/ns/odrl/2/></c-> <c- p>.</c->
-<c- k>@prefix</c-> <c- nn>sector-health:</c-> <c- g>&lt;https://w3id.org/dpv/sector/health#></c-> <c- p>.</c->
-
-<c- g>&lt;https://example.com/health-primarycare></c-> <c- b>a</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>Set</c-> <c- p>;</c->
+   <p>As an example, the following ODRL policy specifies a <em>patient’s permission for its health data to be read by a physician for primary care</em>:</p>
+<pre class="language-turtle highlight"><c- g>&lt;https://example.com/health-primarycare></c-> <c- b>a</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>Set</c-> <c- p>;</c->
     <c- nn>odrl</c-><c- p>:</c-><c- f>uid</c-> <c- g>&lt;https://example.com/health-primarycare></c-> <c- p>;</c->
     <c- nn>dcterms</c-><c- p>:</c-><c- f>description</c-> <c- s>"Patient allows its health data to be read by a physician for primary care."</c-><c- o>@</c->en <c- p>;</c->
     <c- nn>odrl</c-><c- p>:</c-><c- f>permission</c-> <c- p>[</c->
@@ -2274,7 +2271,7 @@ or about the deontic state of prohibitions and obligations.</p>
 Slabbinck <em>et al.</em> described in <a href="https://raw.githubusercontent.com/woutslabbinck/papers/main/2025/Interoperable-Interpretation-and-Evaluation-of-ODRL-Policies.pdf"><em>'Interoperable Interpretation and Evaluation of ODRL Policies'</em></a> the development of the following contributions:</p>
    <ul>
     <li data-md>
-     <p>an <a data-link-type="dfn" href="#odrl-compliance-report" id="ref-for-odrl-compliance-report">ODRL Compliance Report</a> model,</p>
+     <p>an <a data-link-type="dfn">ODRL Compliance Report</a> model,</p>
     <li data-md>
      <p>an <a data-link-type="dfn" href="#odrl-test-suite" id="ref-for-odrl-test-suite">ODRL Test Suite</a>, and</p>
     <li data-md>
@@ -2283,14 +2280,14 @@ Slabbinck <em>et al.</em> described in <a href="https://raw.githubusercontent.co
    <p>Based on this work, FORCE provides</p>
    <ul>
     <li data-md>
-     <p>a guide on the several specifications, e.g., the <a data-link-type="dfn" href="#odrl-compliance-report" id="ref-for-odrl-compliance-report①">ODRL Compliance Report</a> model or the <a href="#odrl3.0">ODRL 3.0 proposal</a>, and pieces of software, e.g., the <a data-link-type="dfn" href="#odrl-test-suite" id="ref-for-odrl-test-suite①">ODRL Test Suite</a> or the <a data-link-type="dfn" href="#odrl-evaluator" id="ref-for-odrl-evaluator①">ODRL Evaluator</a>, we are building to work with the current ODRL standard and to test new features for a possible future version of the standard, and</p>
+     <p>a guide on the several specifications, e.g., the <a data-link-type="dfn">ODRL Compliance Report</a> model or the <a href="#odrl3.0">ODRL 3.0 proposal</a>, and pieces of software, e.g., the <a data-link-type="dfn" href="#odrl-test-suite" id="ref-for-odrl-test-suite①">ODRL Test Suite</a> or the <a data-link-type="dfn" href="#odrl-evaluator" id="ref-for-odrl-evaluator①">ODRL Evaluator</a>, we are building to work with the current ODRL standard and to test new features for a possible future version of the standard, and</p>
     <li data-md>
      <p>a Web application that acts as a playground to test these specifications and software libraries.</p>
    </ul>
    <h3 class="heading settled" data-level="1.1" id="terminology"><span class="secno">1.1. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h3>
    <p>The following terms are used to describe concepts in this specification.</p>
    <dl>
-    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="odrl-compliance-report">ODRL Compliance Report</dfn>
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="odrl-compliance-report-model">ODRL Compliance Report Model</dfn>
     <dd>A vocabulary that is used to elaborate the result of an evaluation of an ODRL Policy, (optionally) ODRL Request and the State of the World. It elaborates not only whether a rule from a policy is active, but also why.
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="odrl-evaluator">ODRL Evaluator</dfn>
     <dd>A system that determines whether the Rules of an ODRL Policy expression have meet their intended action performance.
@@ -2300,11 +2297,99 @@ Slabbinck <em>et al.</em> described in <a href="https://raw.githubusercontent.co
     <dd>Knowledge representing real-world information aiding the evaluation of ODRL Policies.
    </dl>
    <h2 class="heading settled" data-level="2" id="compliance-report"><span class="secno">2. </span><span class="content">ODRL Compliance Report Model</span><a class="self-link" href="#compliance-report"></a></h2>
+   <p>The ODRL Compliance Report Model <a data-link-type="biblio" href="#biblio-compliance-report" title="ODRL Compliance Report Model">[compliance-report]</a> defines a model and a vocabulary
+that can be used to compute the output of an evaluation of a ODRL Policy, a ODRL Request, and the state of the world.
+It elaborates not only whether a rule from a policy is active, but also why,
+by taking into consideration the ODRL Formal Semantics specification <a data-link-type="biblio" href="#biblio-odrl-formal-semantics" title="ODRL Formal Semantics">[odrl-formal-semantics]</a>.</p>
+   <p>To compute the compliance report, the following parameters are considered:</p>
+   <ul>
+    <li data-md>
+     <p><strong>Satisfaction state</strong>: whether a certain premise is satisfied or not, e.g., the requested asset matches the target of the policy rule.</p>
+    <li data-md>
+     <p><strong>Activation state</strong>: a rule is active if, and only if, all premises of a rule are satisfied.</p>
+    <li data-md>
+     <p><strong>Attempted state</strong>: if the assignee made a request to perform a certain action over a certain target asset, then the rule was attempted.</p>
+    <li data-md>
+     <p><strong>Performance state</strong>: whether the action of the rule was performed, unperformed, or it has an unknown state, i.e., there is no information to know if it was already performed or not, but it still can be.</p>
+    <li data-md>
+     <p><strong>Deontic state</strong>: whether a given action that is allowed is already executed, should have been executed and it was not, or there is not enough information to make the decision.</p>
+   </ul>
+   <p>Below is an overview of the ODRL Compliance Report Model.</p>
    <figure id="compliance-report-model-figure">
      <img src="./img/Compliance Report Model.svg"> 
     <figcaption>Compliance Report model</figcaption>
    </figure>
-    <mark>TODO:</mark> refer to custom spec 
+   <p>As an example, if there is a policy that states that ALICE may READ resource X before 2024-02-12T11:20:10.999Z:</p>
+<pre class="language-turtle highlight"><c- g>&lt;urn:uuid:32127a3f-5296-4cc6-b9d6-ef6c647a721d></c-> <c- b>a</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>Set</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>uid</c-> <c- g>&lt;urn:uuid:32127a3f-5296-4cc6-b9d6-ef6c647a721d></c-> <c- p>;</c->
+  <c- nn>dcterms</c-><c- p>:</c-><c- f>description</c-> <c- s>"ALICE may READ resource X before 2024-02-12T11:20:10.999Z."</c-> <c- p>;</c->
+  <c- nn>dcterms</c-><c- p>:</c-><c- f>source</c-> <c- g>&lt;https://github.com/SolidLabResearch/ODRL-Test-Suite/></c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>permission</c-> <c- g>&lt;urn:uuid:d6ab4a38-68fb-418e-8af5-e77649a2187a></c-> <c- p>.</c->
+
+<c- g>&lt;urn:uuid:d6ab4a38-68fb-418e-8af5-e77649a2187a></c-> <c- b>a</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>Permission</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>assignee</c-> <c- nn>ex</c-><c- p>:</c-><c- f>alice</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>action</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>read</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>target</c-> <c- nn>ex</c-><c- p>:</c-><c- f>x</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>constraint</c-> <c- g>&lt;urn:uuid:constraint:86526f9b-57c2-4c94-b079-9762fec562f1></c-> <c- p>.</c->
+
+<c- g>&lt;urn:uuid:constraint:86526f9b-57c2-4c94-b079-9762fec562f1></c-> <c- nn>odrl</c-><c- p>:</c-><c- f>leftOperand</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>dateTime</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>operator</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>lt</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>rightOperand</c-> <c- s>"2024-02-12T11:20:10.999Z"</c-><c- p>^^</c-><c- nn>xsd</c-><c- p>:</c-><c- f>dateTime</c-> <c- p>.</c->
+</pre>
+   <p>and ALICE requests to READ resource X:</p>
+<pre class="language-turtle highlight"><c- g>&lt;urn:uuid:1bafee59-006c-46a3-810c-5d176b4be364></c-> <c- b>a</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>Request</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>uid</c-> <c- g>&lt;urn:uuid:1bafee59-006c-46a3-810c-5d176b4be364></c-> <c- p>;</c->
+  <c- nn>dcterms</c-><c- p>:</c-><c- f>description</c-> <c- s>"Requesting Party ALICE requests to READ resource X."</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>permission</c-> <c- g>&lt;urn:uuid:186be541-5857-4ce3-9f03-1a274f16bf59></c-> <c- p>.</c->
+
+<c- g>&lt;urn:uuid:186be541-5857-4ce3-9f03-1a274f16bf59></c-> <c- b>a</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>Permission</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>assignee</c-> <c- nn>ex</c-><c- p>:</c-><c- f>alice</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>action</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>read</c-> <c- p>;</c->
+  <c- nn>odrl</c-><c- p>:</c-><c- f>target</c-> <c- nn>ex</c-><c- p>:</c-><c- f>x</c-> <c- p>.</c->
+</pre>
+   <p>at the current time that is recorded in the state of the world as:</p>
+<pre class="language-turtle highlight"><c- k>@prefix</c-> <c- nn>temp:</c-> <c- g>&lt;http://example.com/request/></c-> <c- p>.</c->
+
+<c- g>&lt;urn:uuid:192620fa-06d9-447b-adbd-bd1ece4f9b12></c-> <c- b>a</c-> <c- nn>ex</c-><c- p>:</c-><c- f>Sotw</c-> <c- p>;</c->
+  <c- nn>ex</c-><c- p>:</c-><c- f>includes</c-> <c- nn>temp</c-><c- p>:</c-><c- f>currentTime</c-> <c- p>.</c->
+
+<c- nn>temp</c-><c- p>:</c-><c- f>currentTime</c-> <c- nn>dcterms</c-><c- p>:</c-><c- f>issued</c-> <c- s>"2017-02-12T11:20:10.999Z"</c-><c- p>^^</c-><c- nn>xsd</c-><c- p>:</c-><c- f>dateTime</c-> <c- p>.</c->
+</pre>
+   <p>then ALICE is ALLOWED to READ resource X
+because the target resource, action, party, and temporal constraint (current time is before 2024-02-12T11:20:10.999Z)
+premises are satisfied and as such the permission in the policy is active:</p>
+<pre class="language-turtle highlight"><c- g>&lt;urn:uuid:352c5b8a-3249-4a6a-add7-bc3ab1cc41e3></c-> <c- b>a</c-> <c- nn>report</c-><c- p>:</c-><c- f>PolicyReport</c-> <c- p>;</c->
+  <c- nn>dcterms</c-><c- p>:</c-><c- f>created</c-> <c- s>"2017-02-12T11:20:10.999Z"</c-><c- p>^^</c-><c- nn>xsd</c-><c- p>:</c-><c- f>dateTime</c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>policy</c-> <c- g>&lt;urn:uuid:32127a3f-5296-4cc6-b9d6-ef6c647a721d></c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>policyRequest</c-> <c- g>&lt;urn:uuid:1bafee59-006c-46a3-810c-5d176b4be364></c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>ruleReport</c-> <c- g>&lt;urn:uuid:485a907c-c90b-4b8e-8df6-161829751c99></c-> <c- p>.</c->
+
+<c- g>&lt;urn:uuid:485a907c-c90b-4b8e-8df6-161829751c99></c-> <c- b>a</c-> <c- nn>report</c-><c- p>:</c-><c- f>PermissionReport</c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>attemptState</c-> <c- nn>report</c-><c- p>:</c-><c- f>Attempted</c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>rule</c-> <c- g>&lt;urn:uuid:d6ab4a38-68fb-418e-8af5-e77649a2187a></c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>ruleRequest</c-> <c- g>&lt;urn:uuid:186be541-5857-4ce3-9f03-1a274f16bf59></c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>premiseReport</c-> <c- g>&lt;urn:uuid:42391701-9c0b-43de-92f7-5e8d9ee8b425></c-><c- p>,</c->
+    <c- g>&lt;urn:uuid:17d7a919-77a8-447a-9a9f-714795af9663></c-><c- p>,</c->
+    <c- g>&lt;urn:uuid:980cd0b6-7839-4428-937d-f110c3bed77c></c-><c- p>,</c->
+    <c- g>&lt;urn:uuid:5662701d-37da-41e4-9b7c-cf464d88a6dc></c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>activationState</c-> <c- nn>report</c-><c- p>:</c-><c- f>Active</c-> <c- p>.</c->
+
+<c- g>&lt;urn:uuid:17d7a919-77a8-447a-9a9f-714795af9663></c-> <c- b>a</c-> <c- nn>report</c-><c- p>:</c-><c- f>TargetReport</c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>satisfactionState</c-> <c- nn>report</c-><c- p>:</c-><c- f>Satisfied</c-> <c- p>.</c->
+
+<c- g>&lt;urn:uuid:980cd0b6-7839-4428-937d-f110c3bed77c></c-> <c- b>a</c-> <c- nn>report</c-><c- p>:</c-><c- f>PartyReport</c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>satisfactionState</c-> <c- nn>report</c-><c- p>:</c-><c- f>Satisfied</c-> <c- p>.</c->
+
+<c- g>&lt;urn:uuid:5662701d-37da-41e4-9b7c-cf464d88a6dc></c-> <c- b>a</c-> <c- nn>report</c-><c- p>:</c-><c- f>ActionReport</c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>satisfactionState</c-> <c- nn>report</c-><c- p>:</c-><c- f>Satisfied</c-> <c- p>.</c->
+
+<c- g>&lt;urn:uuid:42391701-9c0b-43de-92f7-5e8d9ee8b425></c-> <c- b>a</c-> <c- nn>report</c-><c- p>:</c-><c- f>ConstraintReport</c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>constraint</c-> <c- g>&lt;urn:uuid:constraint:86526f9b-57c2-4c94-b079-9762fec562f1></c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>constraintLeftOperand</c-> <c- s>"2017-02-12T11:20:10.999Z"</c-><c- p>^^</c-><c- nn>xsd</c-><c- p>:</c-><c- f>dateTime</c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>constraintOperator</c-> <c- nn>odrl</c-><c- p>:</c-><c- f>lt</c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>constraintRightOperand</c-> <c- s>"2024-02-12T11:20:10.999Z"</c-><c- p>^^</c-><c- nn>xsd</c-><c- p>:</c-><c- f>dateTime</c-> <c- p>;</c->
+  <c- nn>report</c-><c- p>:</c-><c- f>satisfactionState</c-> <c- nn>report</c-><c- p>:</c-><c- f>Satisfied</c-> <c- p>.</c->
+</pre>
    <h2 class="heading settled" data-level="3" id="test-suite"><span class="secno">3. </span><span class="content">ODRL Test Suite</span><a class="self-link" href="#test-suite"></a></h2>
    <figure id="test-suite-figure">
      <img height="293" src="./img/test-suite-cropped.jpg" width="640"> 
@@ -2325,7 +2410,7 @@ Slabbinck <em>et al.</em> described in <a href="https://raw.githubusercontent.co
    <p>Elaborate the need for the time thingy
 Refer to repo how much we support</p>
    <h2 class="heading settled" data-level="5" id="UI"><span class="secno">5. </span><span class="content">User Interface</span><a class="self-link" href="#UI"></a></h2>
-    <a href="https://w3id.org/force/ESWC2025-demo">https://w3id.org/force/ESWC2025-demo</a> <mark>TODO: rename to NXDG2025 demo</mark> 
+    <a href="https://w3id.org/force/demo">https://w3id.org/force/demo</a> 
    <h2 class="heading settled" data-level="6" id="sotw"><span class="secno">6. </span><span class="content">State of the World for ODRL Evaluator</span><a class="self-link" href="#sotw"></a></h2>
    <p>See the State of the World for ODRL Evaluator specification <a data-link-type="biblio" href="#biblio-sotw4odrl" title="State of the World for ODRL Evaluator">[SotW4ODRL]</a> for further details.</p>
    <h2 class="heading settled" data-level="7" id="odrl3.0"><span class="secno">7. </span><span class="content">ODRL 3.0</span><a class="self-link" href="#odrl3.0"></a></h2>
@@ -2333,7 +2418,7 @@ Refer to repo how much we support</p>
    <h2 class="heading settled" data-level="8" id="supporting-materials"><span class="secno">8. </span><span class="content">Supporting Materials</span><a class="self-link" href="#supporting-materials"></a></h2>
    <ul>
     <li data-md>
-     <p><a data-link-type="dfn" href="#odrl-compliance-report" id="ref-for-odrl-compliance-report②">ODRL Compliance Report</a>: <a href="https://w3id.org/force/compliance-report">https://w3id.org/force/compliance-report</a></p>
+     <p><a data-link-type="dfn">ODRL Compliance Report</a>: <a href="https://w3id.org/force/compliance-report">https://w3id.org/force/compliance-report</a></p>
      <ul>
       <li data-md>
        <p>repo: <a href="https://w3id.org/force/compliance-report/repo">https://w3id.org/force/compliance-report/repo</a></p>
@@ -2364,10 +2449,12 @@ Refer to repo how much we support</p>
    <h2 class="heading settled" data-level="9" id="namespaces"><span class="secno">9. </span><span class="content">Namespaces</span><a class="self-link" href="#namespaces"></a></h2>
    <p>Commonly used namespace prefixes used in this specification:</p>
 <pre class="language-turtle highlight"><c- k>@prefix</c-> <c- nn>dcterms:</c->       <c- g>&lt;http://purl.org/dc/terms/></c-> <c- p>.</c->
+<c- k>@prefix</c-> <c- nn>ex:</c->            <c- g>&lt;http://example.org/></c-> <c- p>.</c->
 <c- k>@prefix</c-> <c- nn>odrl:</c->          <c- g>&lt;http://www.w3.org/ns/odrl/2/></c-> <c- p>.</c->
 <c- k>@prefix</c-> <c- nn>odrl3proposal:</c-> <c- g>&lt;https://w3id.org/force/odrl3proposal#></c-> <c- p>.</c->
 <c- k>@prefix</c-> <c- nn>report:</c->        <c- g>&lt;https://w3id.org/force/compliance-report#></c-> <c- p>.</c->
 <c- k>@prefix</c-> <c- nn>rdf:</c->           <c- g>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#></c-> <c- p>.</c->
+<c- k>@prefix</c-> <c- nn>sector-health:</c-> <c- g>&lt;https://w3id.org/dpv/sector/health#></c-> <c- p>.</c->
 <c- k>@prefix</c-> <c- nn>skos:</c->          <c- g>&lt;http://www.w3.org/2004/02/skos/core#></c-> <c- p>.</c->
 <c- k>@prefix</c-> <c- nn>xsd:</c->           <c- g>&lt;http://www.w3.org/2001/XMLSchema#></c-> <c- p>.</c->
 </pre>
@@ -2521,7 +2608,7 @@ Refer to repo how much we support</p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#odrl-compliance-report">ODRL Compliance Report</a><span>, in § 1.1</span>
+   <li><a href="#odrl-compliance-report-model">ODRL Compliance Report Model</a><span>, in § 1.1</span>
    <li><a href="#odrl-evaluator">ODRL Evaluator</a><span>, in § 1.1</span>
    <li><a href="#odrl-test-suite">ODRL Test Suite</a><span>, in § 1.1</span>
    <li><a href="#state-of-the-world">State of the World</a><span>, in § 1.1</span>
@@ -2529,6 +2616,8 @@ Refer to repo how much we support</p>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
   <dl>
+   <dt id="biblio-compliance-report">[COMPLIANCE-REPORT]
+   <dd>Wout Slabbinck; Beatriz Esteves. <a href="https://w3id.org/force/compliance-report"><cite>ODRL Compliance Report Model</cite></a>. URL: <a href="https://w3id.org/force/compliance-report">https://w3id.org/force/compliance-report</a>
    <dt id="biblio-odrl-formal-semantics">[ODRL-FORMAL-SEMANTICS]
    <dd>Nicoletta Fornara; et al. <a href="https://w3c.github.io/odrl/formal-semantics/"><cite>ODRL Formal Semantics</cite></a>. URL: <a href="https://w3c.github.io/odrl/formal-semantics/">https://w3c.github.io/odrl/formal-semantics/</a>
    <dt id="biblio-odrl-instantiation">[ODRL-Instantiation]
@@ -2746,7 +2835,7 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"odrl-compliance-report": {"dfnID":"odrl-compliance-report","dfnText":"ODRL Compliance Report","external":false,"refSections":[{"refs":[{"id":"ref-for-odrl-compliance-report"},{"id":"ref-for-odrl-compliance-report\u2460"}],"title":"1. Introd\u00aduction"},{"refs":[{"id":"ref-for-odrl-compliance-report\u2461"}],"title":"8. Supporting Materials"}],"url":"#odrl-compliance-report"},
+"odrl-compliance-report-model": {"dfnID":"odrl-compliance-report-model","dfnText":"ODRL Compliance Report Model","external":false,"refSections":[],"url":"#odrl-compliance-report-model"},
 "odrl-evaluator": {"dfnID":"odrl-evaluator","dfnText":"ODRL Evaluator","external":false,"refSections":[{"refs":[{"id":"ref-for-odrl-evaluator"},{"id":"ref-for-odrl-evaluator\u2460"}],"title":"1. Introd\u00aduction"},{"refs":[{"id":"ref-for-odrl-evaluator\u2461"}],"title":"8. Supporting Materials"}],"url":"#odrl-evaluator"},
 "odrl-test-suite": {"dfnID":"odrl-test-suite","dfnText":"ODRL Test Suite","external":false,"refSections":[{"refs":[{"id":"ref-for-odrl-test-suite"},{"id":"ref-for-odrl-test-suite\u2460"}],"title":"1. Introd\u00aduction"}],"url":"#odrl-test-suite"},
 "state-of-the-world": {"dfnID":"state-of-the-world","dfnText":"State of the World","external":false,"refSections":[{"refs":[{"id":"ref-for-state-of-the-world"}],"title":"8. Supporting Materials"}],"url":"#state-of-the-world"},
@@ -3138,7 +3227,6 @@ function genLinkingSyntaxes(dfn) {
 "use strict";
 {
 let refsData = {
-"#odrl-compliance-report": {"displayText":"odrl compliance report","export":true,"for_":[],"level":"","normative":true,"shortname":"force","spec":"force","status":"local","text":"odrl compliance report","type":"dfn","url":"#odrl-compliance-report"},
 "#odrl-evaluator": {"displayText":"odrl evaluator","export":true,"for_":[],"level":"","normative":true,"shortname":"force","spec":"force","status":"local","text":"odrl evaluator","type":"dfn","url":"#odrl-evaluator"},
 "#odrl-test-suite": {"displayText":"odrl test suite","export":true,"for_":[],"level":"","normative":true,"shortname":"force","spec":"force","status":"local","text":"odrl test suite","type":"dfn","url":"#odrl-test-suite"},
 "#state-of-the-world": {"displayText":"state of the world","export":true,"for_":[],"level":"","normative":true,"shortname":"force","spec":"force","status":"local","text":"state of the world","type":"dfn","url":"#state-of-the-world"},
